@@ -9,9 +9,13 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
     let homeCoordinator = HomeCoordinator()
+    let favouriteCoordinator = FavouriteCoordinator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewControllers = [homeCoordinator.navigationController]
+        viewControllers = [
+            homeCoordinator.navigationController,
+            favouriteCoordinator.navigationController
+        ]
     }
 }
