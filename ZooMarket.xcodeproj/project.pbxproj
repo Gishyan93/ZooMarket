@@ -23,7 +23,6 @@
 		CEEB3D44283EA76B007FF5FE /* Items.json in Resources */ = {isa = PBXBuildFile; fileRef = CEEB3D43283EA76B007FF5FE /* Items.json */; };
 		CEEB3D47283EB205007FF5FE /* BundleLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB3D46283EB205007FF5FE /* BundleLoading.swift */; };
 		CEEB3D49283EB262007FF5FE /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB3D48283EB262007FF5FE /* Item.swift */; };
-		CEEB3D4B283EC2A7007FF5FE /* HomeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB3D4A283EC2A7007FF5FE /* HomeSection.swift */; };
 		CEEB3D4D283EC58E007FF5FE /* BrandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB3D4C283EC58E007FF5FE /* BrandCell.swift */; };
 		CEEB3D56284B4745007FF5FE /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB3D55284B4745007FF5FE /* HeaderView.swift */; };
 /* End PBXBuildFile section */
@@ -47,7 +46,6 @@
 		CEEB3D43283EA76B007FF5FE /* Items.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Items.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		CEEB3D46283EB205007FF5FE /* BundleLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleLoading.swift; sourceTree = "<group>"; };
 		CEEB3D48283EB262007FF5FE /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		CEEB3D4A283EC2A7007FF5FE /* HomeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSection.swift; sourceTree = "<group>"; };
 		CEEB3D4C283EC58E007FF5FE /* BrandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandCell.swift; sourceTree = "<group>"; };
 		CEEB3D55284B4745007FF5FE /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,10 +80,10 @@
 		CEDC6617283AAB83001D4E71 /* ZooMarket */ = {
 			isa = PBXGroup;
 			children = (
-				CEEB3D54284B472D007FF5FE /* Shared Views */,
 				CEDC6618283AAB83001D4E71 /* AppDelegate.swift */,
 				CEDC661A283AAB83001D4E71 /* SceneDelegate.swift */,
 				CEDC662E283AAE14001D4E71 /* MainTabBarController.swift */,
+				CEEB3D54284B472D007FF5FE /* Shared Views */,
 				CEDC662C283AAD77001D4E71 /* Scenes */,
 				CEDC6634283AB4D2001D4E71 /* Reusables */,
 				CEEB3D45283EB1F3007FF5FE /* Extensions */,
@@ -113,7 +111,6 @@
 				CEEB3D3C283EA5FE007FF5FE /* HomeDataSource.swift */,
 				CEEB3D43283EA76B007FF5FE /* Items.json */,
 				CEEB3D48283EB262007FF5FE /* Item.swift */,
-				CEEB3D4A283EC2A7007FF5FE /* HomeSection.swift */,
 				CEEB3D4C283EC58E007FF5FE /* BrandCell.swift */,
 				CE068567284F601D00BE6441 /* AlsoLikeCell.swift */,
 			);
@@ -227,7 +224,6 @@
 			files = (
 				CEEB3D4D283EC58E007FF5FE /* BrandCell.swift in Sources */,
 				CE068568284F601D00BE6441 /* AlsoLikeCell.swift in Sources */,
-				CEEB3D4B283EC2A7007FF5FE /* HomeSection.swift in Sources */,
 				CEDC663B283BFE20001D4E71 /* FavoutiteCoordinator.swift in Sources */,
 				CEDC6619283AAB83001D4E71 /* AppDelegate.swift in Sources */,
 				CEDC661B283AAB83001D4E71 /* SceneDelegate.swift in Sources */,

@@ -41,7 +41,7 @@ class HomeViewController: UICollectionViewController {
             forSupplementaryViewOfKind: HomeViewController.sectionHeaderElementKind,
             withReuseIdentifier: HeaderView.reuseIdentifier
         )
-        
+                
         view.backgroundColor = .white
         title = "Home"
     }

@@ -7,10 +7,27 @@
 
 import UIKit
 
+struct HomeSection {
+    let title: String?
+    let type: HomeSectionType
+    let items: [HomeItem]
+}
+
+enum HomeSectionType {
+    case brands
+    case alsoLike
+}
+
+struct HomeItem {
+    let id: Int
+    let name: String
+    let image: String
+}
+
 class HomeDataSource: NSObject, UICollectionViewDataSource {
     // MARK: - Properties
     let itemData = Bundle.main.decode(ItemData.self, from: "Items.json")
-    private (set)var sections = [HomeSection]()
+    private(set) var sections: [HomeSection] = []
     
     override init() {
         super.init()
@@ -19,10 +36,11 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
     }
     
     func updateSections() {
-        let homeItems = itemData.data.brands.map({ brand in
-            return HomeItem(id: brand.id, name: brand.name, image: brand.image)
-        })
-        let brands = HomeSection(title: "Brands", type: .brands, items: homeItems)
+        let brandItems = itemData.data.brands.map {
+            HomeItem(id: $0.id, name: $0.name, image: $0.image)
+        }
+        
+        let brands = HomeSection(title: "Brands", type: .brands, items: brandItems)
         sections = [ brands, makeAlsoLikeSection() ]
     }
     
@@ -32,7 +50,11 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
         let thirdItem = HomeItem(id: 2, name: "", image: "")
         let forthItem = HomeItem(id: 3, name: "", image: "")
         
-        return HomeSection(title: "You may also like", type: .alsoLike, items: [firstItem, secondItem, thirdItem, forthItem])
+        return HomeSection(
+            title: "You may also like",
+            type: .alsoLike,
+            items: [firstItem, secondItem, thirdItem, forthItem]
+        )
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
