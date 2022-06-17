@@ -47,12 +47,11 @@ class HomeViewController: UICollectionViewController {
     }
     
     // MARK: - Layout
-    private func makeLayout() -> UICollectionViewLayout {
-        let layout = UICollectionViewCompositionalLayout { (section, env) -> NSCollectionLayoutSection? in
-            let isWideView = env.container.effectiveContentSize.width > 500
+    private func makeLayout() -> UICollectionViewCompositionalLayout {
+        let layout = UICollectionViewCompositionalLayout { (section, _) in
             switch self.dataSource.sections[section].type {
             case .brands:
-                return self.brandsSection(isWide: isWideView)
+                return self.createBrandSection()
             case .alsoLike:
                 return self.alsoLikeSection()
             }
@@ -60,22 +59,28 @@ class HomeViewController: UICollectionViewController {
         return layout
     }
     
-    private func brandsSection(isWide: Bool) -> NSCollectionLayoutSection {
+    private func createBrandSection() -> NSCollectionLayoutSection {
+        // MARK: - Creating item
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .fractionalWidth(1.0)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-
+        
+        // MARK: - Creating group
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.4),
             heightDimension: .fractionalWidth(0.4)
         )
+        
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize, subitem: item, count: 1
         )
-        group.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+        group.contentInsets = NSDirectionalEdgeInsets(
+            top: 5, leading: 5, bottom: 5, trailing: 5
+        )
 
+        // MARK: - Creating Header
         let headerSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .estimated(44)
@@ -86,6 +91,7 @@ class HomeViewController: UICollectionViewController {
           alignment: .top
         )
 
+        // MARK: - Creating section
         let section = NSCollectionLayoutSection(group: group)
         section.boundarySupplementaryItems = [sectionHeader]
         section.orthogonalScrollingBehavior = .groupPaging
@@ -98,13 +104,19 @@ class HomeViewController: UICollectionViewController {
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .fractionalHeight(1.0)
         )
+        
+        // MARK: - Item
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
+        item.contentInsets = NSDirectionalEdgeInsets(
+            top: 2, leading: 2, bottom: 2, trailing: 2
+        )
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .fractionalWidth(0.5)
         )
+        
+        // MARK: - Group
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize, subitem: item, count: 2
         )
@@ -119,6 +131,7 @@ class HomeViewController: UICollectionViewController {
             alignment: .top
         )
         
+        // MARK: - Section
         let section = NSCollectionLayoutSection(group: group)
         section.boundarySupplementaryItems = [sectionHeader]
         

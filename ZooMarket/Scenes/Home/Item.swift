@@ -12,12 +12,6 @@ struct ItemData: Codable {
     let status: Int
     let message: String
     let data: Item
-    
-    enum CodingKeys: String, CodingKey {
-        case status = "Status"
-        case message
-        case data
-    }
 }
 
 // MARK: - Item
