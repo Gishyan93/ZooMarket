@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UICollectionViewController {
+class HomeViewController: BaseCollectionViewController {
     static let sectionHeaderElementKind = "section-header-element-kind"
     
     var coordinator: HomeCoordinator?
@@ -42,7 +42,6 @@ class HomeViewController: UICollectionViewController {
             withReuseIdentifier: HeaderView.reuseIdentifier
         )
                 
-        view.backgroundColor = .white
         title = "Home"
     }
     

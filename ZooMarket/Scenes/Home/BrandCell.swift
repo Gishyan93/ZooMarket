@@ -7,34 +7,46 @@
 
 import UIKit
 
-class BaseCell: UICollectionViewCell {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        initViews()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func initViews() {}
-}
-
 class BrandCell: BaseCell {
     var nameLabel: UILabel!
-    
+    var likeButton: UIButton!
+        
     override func initViews() {
         backgroundColor = .red
         
+        initNabeLabel()
+        initLikeButton()
+        constructHierarchy()
+        activateConstraints()
+    }
+    
+    private func initNabeLabel() {
         nameLabel = UILabel()
-        nameLabel.text = "TEST"
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        
+    }
+    
+    private func initLikeButton() {
+        likeButton = UIButton(type: .system)
+        likeButton.setImage(
+            UIImage(systemName: "heart"),
+            for: .normal
+        )
+        likeButton.tintColor = .black
+        likeButton.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    private func constructHierarchy() {
         addSubview(nameLabel)
-        
+        addSubview(likeButton)
+    }
+    
+    private func activateConstraints() {
         NSLayoutConstraint.activate([
             nameLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            nameLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
+            nameLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            
+            likeButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
+            likeButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8)
         ])
     }
 }

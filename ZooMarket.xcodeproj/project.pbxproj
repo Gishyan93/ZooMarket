@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9895628C285DBCFF0061FE55 /* BaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9895628B285DBCFF0061FE55 /* BaseCollectionViewController.swift */; };
+		9895628E2860DADB0061FE55 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9895628D2860DADB0061FE55 /* BaseCell.swift */; };
 		CE068568284F601D00BE6441 /* AlsoLikeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE068567284F601D00BE6441 /* AlsoLikeCell.swift */; };
 		CEDC6619283AAB83001D4E71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC6618283AAB83001D4E71 /* AppDelegate.swift */; };
 		CEDC661B283AAB83001D4E71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC661A283AAB83001D4E71 /* SceneDelegate.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9895628B285DBCFF0061FE55 /* BaseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewController.swift; sourceTree = "<group>"; };
+		9895628D2860DADB0061FE55 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		CE068567284F601D00BE6441 /* AlsoLikeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlsoLikeCell.swift; sourceTree = "<group>"; };
 		CEDC6615283AAB83001D4E71 /* ZooMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZooMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEDC6618283AAB83001D4E71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +126,8 @@
 			children = (
 				CEDC6635283AB4F2001D4E71 /* CoordinatedNavigationController.swift */,
 				CEDC6637283AB59E001D4E71 /* Coordinator.swift */,
+				9895628B285DBCFF0061FE55 /* BaseCollectionViewController.swift */,
+				9895628D2860DADB0061FE55 /* BaseCell.swift */,
 			);
 			path = Reusables;
 			sourceTree = "<group>";
@@ -233,10 +239,12 @@
 				CEEB3D3D283EA5FE007FF5FE /* HomeDataSource.swift in Sources */,
 				CEDC6633283AB1C2001D4E71 /* HomeCoordinator.swift in Sources */,
 				CEEB3D56284B4745007FF5FE /* HeaderView.swift in Sources */,
+				9895628E2860DADB0061FE55 /* BaseCell.swift in Sources */,
 				CEDC662F283AAE14001D4E71 /* MainTabBarController.swift in Sources */,
 				CEEB3D47283EB205007FF5FE /* BundleLoading.swift in Sources */,
 				CEDC6631283AAE6A001D4E71 /* HomeViewController.swift in Sources */,
 				CEDC6638283AB59E001D4E71 /* Coordinator.swift in Sources */,
+				9895628C285DBCFF0061FE55 /* BaseCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
