@@ -80,8 +80,6 @@
 			children = (
 				CEDC6630283AAE6A001D4E71 /* HomeViewController.swift */,
 				CEEB3D3C283EA5FE007FF5FE /* HomeDataSource.swift */,
-				CEEB3D48283EB262007FF5FE /* Item.swift */,
-				CEEB3D43283EA76B007FF5FE /* Items.json */,
 				989562932861C0560061FE55 /* Cells */,
 			);
 			path = Home;
@@ -96,11 +94,51 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		989562942862EEB80061FE55 /* Services */ = {
+		9895629B2863100B0061FE55 /* ZooMarket */ = {
 			isa = PBXGroup;
 			children = (
+				CEDC6626283AAB85001D4E71 /* Info.plist */,
+				CEDC6623283AAB85001D4E71 /* LaunchScreen.storyboard */,
+				CEDC6621283AAB85001D4E71 /* Assets.xcassets */,
 			);
-			path = Services;
+			path = ZooMarket;
+			sourceTree = "<group>";
+		};
+		9895629C2863104B0061FE55 /* ZooMarket_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CEDC662E283AAE14001D4E71 /* MainTabBarController.swift */,
+				CEDC662D283AADF9001D4E71 /* Home */,
+				CEDC6639283BFE06001D4E71 /* Favourite */,
+			);
+			path = ZooMarket_iOS;
+			sourceTree = "<group>";
+		};
+		9895629D286310F00061FE55 /* ZooMarket_UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				CEEB3D45283EB1F3007FF5FE /* Extensions */,
+				CEDC6634283AB4D2001D4E71 /* Reusables */,
+				CEEB3D54284B472D007FF5FE /* Shared Views */,
+			);
+			path = ZooMarket_UIKit;
+			sourceTree = "<group>";
+		};
+		9895629E2863117A0061FE55 /* ZooMarketKit */ = {
+			isa = PBXGroup;
+			children = (
+				9895629F286311A70061FE55 /* Models */,
+			);
+			path = ZooMarketKit;
+			sourceTree = "<group>";
+		};
+		9895629F286311A70061FE55 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CEEB3D48283EB262007FF5FE /* Item.swift */,
+				CEEB3D43283EA76B007FF5FE /* Items.json */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		CEDC660C283AAB83001D4E71 = {
@@ -122,28 +160,14 @@
 		CEDC6617283AAB83001D4E71 /* ZooMarket */ = {
 			isa = PBXGroup;
 			children = (
-				989562942862EEB80061FE55 /* Services */,
-				CEDC6618283AAB83001D4E71 /* AppDelegate.swift */,
 				CEDC661A283AAB83001D4E71 /* SceneDelegate.swift */,
-				CEDC662E283AAE14001D4E71 /* MainTabBarController.swift */,
-				CEEB3D54284B472D007FF5FE /* Shared Views */,
-				CEDC662C283AAD77001D4E71 /* Scenes */,
-				CEDC6634283AB4D2001D4E71 /* Reusables */,
-				CEEB3D45283EB1F3007FF5FE /* Extensions */,
-				CEDC6621283AAB85001D4E71 /* Assets.xcassets */,
-				CEDC6623283AAB85001D4E71 /* LaunchScreen.storyboard */,
-				CEDC6626283AAB85001D4E71 /* Info.plist */,
+				CEDC6618283AAB83001D4E71 /* AppDelegate.swift */,
+				9895629B2863100B0061FE55 /* ZooMarket */,
+				9895629C2863104B0061FE55 /* ZooMarket_iOS */,
+				9895629D286310F00061FE55 /* ZooMarket_UIKit */,
+				9895629E2863117A0061FE55 /* ZooMarketKit */,
 			);
 			path = ZooMarket;
-			sourceTree = "<group>";
-		};
-		CEDC662C283AAD77001D4E71 /* Scenes */ = {
-			isa = PBXGroup;
-			children = (
-				CEDC662D283AADF9001D4E71 /* Home */,
-				CEDC6639283BFE06001D4E71 /* Favourite */,
-			);
-			path = Scenes;
 			sourceTree = "<group>";
 		};
 		CEDC662D283AADF9001D4E71 /* Home */ = {
