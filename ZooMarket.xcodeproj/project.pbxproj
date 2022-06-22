@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9895628C285DBCFF0061FE55 /* BaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9895628B285DBCFF0061FE55 /* BaseCollectionViewController.swift */; };
 		9895628E2860DADB0061FE55 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9895628D2860DADB0061FE55 /* BaseCell.swift */; };
+		989562912861BFE40061FE55 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989562902861BFE40061FE55 /* ItemDetailViewController.swift */; };
 		CE068568284F601D00BE6441 /* AlsoLikeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE068567284F601D00BE6441 /* AlsoLikeCell.swift */; };
 		CEDC6619283AAB83001D4E71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC6618283AAB83001D4E71 /* AppDelegate.swift */; };
 		CEDC661B283AAB83001D4E71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC661A283AAB83001D4E71 /* SceneDelegate.swift */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		9895628B285DBCFF0061FE55 /* BaseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewController.swift; sourceTree = "<group>"; };
 		9895628D2860DADB0061FE55 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
+		989562902861BFE40061FE55 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		CE068567284F601D00BE6441 /* AlsoLikeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlsoLikeCell.swift; sourceTree = "<group>"; };
 		CEDC6615283AAB83001D4E71 /* ZooMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZooMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEDC6618283AAB83001D4E71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9895628F2861BFD10061FE55 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				989562902861BFE40061FE55 /* ItemDetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		989562922861C01B0061FE55 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CEDC6630283AAE6A001D4E71 /* HomeViewController.swift */,
+				CEEB3D3C283EA5FE007FF5FE /* HomeDataSource.swift */,
+				CEEB3D48283EB262007FF5FE /* Item.swift */,
+				CEEB3D43283EA76B007FF5FE /* Items.json */,
+				989562932861C0560061FE55 /* Cells */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		989562932861C0560061FE55 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CEEB3D4C283EC58E007FF5FE /* BrandCell.swift */,
+				CE068567284F601D00BE6441 /* AlsoLikeCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		989562942862EEB80061FE55 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		CEDC660C283AAB83001D4E71 = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +122,7 @@
 		CEDC6617283AAB83001D4E71 /* ZooMarket */ = {
 			isa = PBXGroup;
 			children = (
+				989562942862EEB80061FE55 /* Services */,
 				CEDC6618283AAB83001D4E71 /* AppDelegate.swift */,
 				CEDC661A283AAB83001D4E71 /* SceneDelegate.swift */,
 				CEDC662E283AAE14001D4E71 /* MainTabBarController.swift */,
@@ -111,12 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				CEDC6632283AB1C2001D4E71 /* HomeCoordinator.swift */,
-				CEDC6630283AAE6A001D4E71 /* HomeViewController.swift */,
-				CEEB3D3C283EA5FE007FF5FE /* HomeDataSource.swift */,
-				CEEB3D43283EA76B007FF5FE /* Items.json */,
-				CEEB3D48283EB262007FF5FE /* Item.swift */,
-				CEEB3D4C283EC58E007FF5FE /* BrandCell.swift */,
-				CE068567284F601D00BE6441 /* AlsoLikeCell.swift */,
+				989562922861C01B0061FE55 /* Home */,
+				9895628F2861BFD10061FE55 /* Detail */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -237,6 +272,7 @@
 				CEEB3D49283EB262007FF5FE /* Item.swift in Sources */,
 				CEDC663D283BFE2F001D4E71 /* FavouriteViewController.swift in Sources */,
 				CEEB3D3D283EA5FE007FF5FE /* HomeDataSource.swift in Sources */,
+				989562912861BFE40061FE55 /* ItemDetailViewController.swift in Sources */,
 				CEDC6633283AB1C2001D4E71 /* HomeCoordinator.swift in Sources */,
 				CEEB3D56284B4745007FF5FE /* HeaderView.swift in Sources */,
 				9895628E2860DADB0061FE55 /* BaseCell.swift in Sources */,

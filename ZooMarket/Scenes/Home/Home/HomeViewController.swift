@@ -43,6 +43,7 @@ class HomeViewController: BaseCollectionViewController {
         )
                 
         title = "Home"
+        dataSource.delegate = self
     }
     
     // MARK: - Layout
@@ -135,5 +136,18 @@ class HomeViewController: BaseCollectionViewController {
         section.boundarySupplementaryItems = [sectionHeader]
         
         return section
+    }
+    
+    override func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath
+    ) {
+        coordinator?.showItemDetailScene()
+    }
+}
+
+extension HomeViewController: HomeDataSourceDelegate {
+    func updateInfo() {
+        collectionView.reloadData()
     }
 }

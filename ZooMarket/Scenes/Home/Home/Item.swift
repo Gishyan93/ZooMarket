@@ -11,16 +11,17 @@ import Foundation
 struct ItemData: Codable {
     let status: Int
     let message: String
-    let data: Item
+    var data: Item
 }
 
 // MARK: - Item
 struct Item: Codable {
-    let brands: [Brand]
+    var brands: [Brand]
 }
 
 // MARK: - Brand
 struct Brand: Codable {
     let id: Int
     let image, name: String
+    var isFavourite: Bool?
 }

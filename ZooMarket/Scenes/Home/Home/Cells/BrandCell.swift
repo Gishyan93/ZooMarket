@@ -7,9 +7,16 @@
 
 import UIKit
 
+protocol BrandCellDelegate {
+    func likeButtonPressed(with brand: Brand)
+}
+
 class BrandCell: BaseCell {
+    // FIXME: - Can cause a retain cycle
+    var delegate: BrandCellDelegate?
     var nameLabel: UILabel!
     var likeButton: UIButton!
+    private var data: Brand!
         
     override func initViews() {
         backgroundColor = .red
@@ -18,8 +25,32 @@ class BrandCell: BaseCell {
         initLikeButton()
         constructHierarchy()
         activateConstraints()
+        
+        likeButton.addTarget(
+            self, action: #selector(likeButtonPressed), for: .touchUpInside
+        )
     }
     
+    func set(data: Brand) {
+        self.data = data
+        nameLabel.text = data.name
+        let isFavourite = data.isFavourite ?? false
+        
+        if isFavourite {
+            likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        } else {
+            likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        }
+    }
+    
+    @objc func likeButtonPressed() {
+        delegate?.likeButtonPressed(with: self.data)
+    }
+    
+}
+
+// MARK: - Layout
+extension BrandCell {
     private func initNabeLabel() {
         nameLabel = UILabel()
         nameLabel.translatesAutoresizingMaskIntoConstraints = false

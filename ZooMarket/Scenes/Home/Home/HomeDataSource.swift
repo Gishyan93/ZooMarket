@@ -24,9 +24,14 @@ struct HomeItem {
     let image: String
 }
 
+protocol HomeDataSourceDelegate {
+    func updateInfo()
+}
+
 class HomeDataSource: NSObject, UICollectionViewDataSource {
-    // MARK: - Properties
-    let itemData = Bundle.main.decode(ItemData.self, from: "Items.json")
+    // FIXME: - Can cause a retain cycle
+    var delegate: HomeDataSourceDelegate?
+    var itemData = Bundle.main.decode(ItemData.self, from: "Items.json")
     private(set) var sections: [HomeSection] = []
     
     override init() {
@@ -81,13 +86,20 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
         }
     }
     
-    private func makeBrands(in collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
+    private func makeBrands(
+        in collectionView: UICollectionView,
+        indexPath: IndexPath
+    ) -> UICollectionViewCell {
         guard
             let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: "BrandCell", for: indexPath
             ) as? BrandCell
         else { fatalError("Failed to dequeue a StatusCollectionViewCell.") }
 
+        
+        cell.delegate = self
+        cell.set(data: itemData.data.brands[indexPath.item])
+        
         return cell
     }
     
@@ -113,5 +125,20 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
         ) as! HeaderView
 
         return headerView
+    }
+}
+
+extension HomeDataSource: BrandCellDelegate {
+    func likeButtonPressed(with brand: Brand) {
+        
+        let brands = itemData.data.brands
+        for (index, item) in brands.enumerated() {
+            if item.id == brand.id {
+                let isFav = itemData.data.brands[index].isFavourite ?? false
+                itemData.data.brands[index].isFavourite = !isFav
+            }
+        }
+        
+        delegate?.updateInfo()
     }
 }

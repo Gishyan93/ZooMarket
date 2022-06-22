@@ -23,4 +23,11 @@ class HomeCoordinator: Coordinator {
         
         navigationController.viewControllers = [viewController]
     }
+    
+    func showItemDetailScene() {
+        let viewController = ItemDetailViewController()
+        navigationController.pushViewController(
+            viewController, animated: true
+        )
+    }
 }
