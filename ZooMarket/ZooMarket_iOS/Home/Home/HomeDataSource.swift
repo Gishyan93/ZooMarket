@@ -24,13 +24,13 @@ struct HomeItem {
     let image: String
 }
 
-protocol HomeDataSourceDelegate {
+protocol HomeDataSourceDelegate: AnyObject {
     func updateInfo()
 }
 
 class HomeDataSource: NSObject, UICollectionViewDataSource {
-    // FIXME: - Can cause a retain cycle
-    var delegate: HomeDataSourceDelegate?
+    weak var delegate: HomeDataSourceDelegate?
+        
     var itemData = Bundle.main.decode(ItemData.self, from: "Items.json")
     private(set) var sections: [HomeSection] = []
     

@@ -97,7 +97,6 @@
 		9895629B2863100B0061FE55 /* ZooMarket */ = {
 			isa = PBXGroup;
 			children = (
-				CEDC6626283AAB85001D4E71 /* Info.plist */,
 				CEDC6623283AAB85001D4E71 /* LaunchScreen.storyboard */,
 				CEDC6621283AAB85001D4E71 /* Assets.xcassets */,
 			);
@@ -160,6 +159,7 @@
 		CEDC6617283AAB83001D4E71 /* ZooMarket */ = {
 			isa = PBXGroup;
 			children = (
+				CEDC6626283AAB85001D4E71 /* Info.plist */,
 				CEDC661A283AAB83001D4E71 /* SceneDelegate.swift */,
 				CEDC6618283AAB83001D4E71 /* AppDelegate.swift */,
 				9895629B2863100B0061FE55 /* ZooMarket */,

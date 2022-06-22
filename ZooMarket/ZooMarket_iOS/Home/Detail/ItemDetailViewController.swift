@@ -13,4 +13,8 @@ class ItemDetailViewController: UIViewController {
         
         view.backgroundColor = .red
     }
+    
+    deinit {
+        print("Memory deinitialized")
+    }
 }

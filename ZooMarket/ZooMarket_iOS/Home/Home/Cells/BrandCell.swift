@@ -7,13 +7,12 @@
 
 import UIKit
 
-protocol BrandCellDelegate {
+protocol BrandCellDelegate: AnyObject {
     func likeButtonPressed(with brand: Brand)
 }
 
 class BrandCell: BaseCell {
-    // FIXME: - Can cause a retain cycle
-    var delegate: BrandCellDelegate?
+    weak var delegate: BrandCellDelegate?
     var nameLabel: UILabel!
     var likeButton: UIButton!
     private var data: Brand!
