@@ -30,8 +30,10 @@ protocol HomeDataSourceDelegate: AnyObject {
 
 class HomeDataSource: NSObject, UICollectionViewDataSource {
     weak var delegate: HomeDataSourceDelegate?
-        
-    var itemData = Bundle.main.decode(ItemData.self, from: "Items.json")
+    
+    let homeRepository = HomeRepository()
+    
+    var brands: [Brand] = []
     private(set) var sections: [HomeSection] = []
     
     override init() {
@@ -41,7 +43,8 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
     }
     
     func updateSections() {
-        let brandItems = itemData.data.brands.map {
+        brands = homeRepository.getBrands()
+        let brandItems = brands.map {
             HomeItem(id: $0.id, name: $0.name, image: $0.image)
         }
         
@@ -98,7 +101,7 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
 
         
         cell.delegate = self
-        cell.set(data: itemData.data.brands[indexPath.item])
+        cell.set(data: brands[indexPath.item])
         
         return cell
     }
@@ -124,6 +127,13 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
             for: indexPath
         ) as! HeaderView
 
+        let section = sections[indexPath.section]
+        switch section.type {
+        case .brands:
+            headerView.label.text = "Brands"
+        case .alsoLike:
+            headerView.label.text = "Also Like"
+        }
         return headerView
     }
 }
@@ -131,13 +141,8 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
 extension HomeDataSource: BrandCellDelegate {
     func likeButtonPressed(with brand: Brand) {
         
-        let brands = itemData.data.brands
-        for (index, item) in brands.enumerated() {
-            if item.id == brand.id {
-                let isFav = itemData.data.brands[index].isFavourite ?? false
-                itemData.data.brands[index].isFavourite = !isFav
-            }
-        }
+        homeRepository.set(brand: brand)
+        brands = homeRepository.getBrands()
         
         delegate?.updateInfo()
     }

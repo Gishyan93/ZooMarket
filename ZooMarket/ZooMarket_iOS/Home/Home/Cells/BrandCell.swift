@@ -36,9 +36,23 @@ class BrandCell: BaseCell {
         let isFavourite = data.isFavourite ?? false
         
         if isFavourite {
-            likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            UIView.transition(
+                with: likeButton,
+                duration: 2,
+                options: .transitionCrossDissolve,
+                animations: {
+                    self.likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                }, completion: nil)
+//            self.likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         } else {
-            likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
+//            self.likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            UIView.transition(
+                with: likeButton,
+                duration: 2,
+                options: .transitionCrossDissolve,
+                animations: {
+                    self.likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
+                }, completion: nil)
         }
     }
     

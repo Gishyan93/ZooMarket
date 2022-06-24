@@ -10,6 +10,8 @@
 		9895628C285DBCFF0061FE55 /* BaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9895628B285DBCFF0061FE55 /* BaseCollectionViewController.swift */; };
 		9895628E2860DADB0061FE55 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9895628D2860DADB0061FE55 /* BaseCell.swift */; };
 		989562912861BFE40061FE55 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989562902861BFE40061FE55 /* ItemDetailViewController.swift */; };
+		9897BC16286395CE001B4238 /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9897BC15286395CE001B4238 /* HomeRepository.swift */; };
+		9897BC1928639622001B4238 /* ItemsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9897BC1828639622001B4238 /* ItemsService.swift */; };
 		CE068568284F601D00BE6441 /* AlsoLikeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE068567284F601D00BE6441 /* AlsoLikeCell.swift */; };
 		CEDC6619283AAB83001D4E71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC6618283AAB83001D4E71 /* AppDelegate.swift */; };
 		CEDC661B283AAB83001D4E71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC661A283AAB83001D4E71 /* SceneDelegate.swift */; };
@@ -34,6 +36,8 @@
 		9895628B285DBCFF0061FE55 /* BaseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewController.swift; sourceTree = "<group>"; };
 		9895628D2860DADB0061FE55 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		989562902861BFE40061FE55 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		9897BC15286395CE001B4238 /* HomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepository.swift; sourceTree = "<group>"; };
+		9897BC1828639622001B4238 /* ItemsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsService.swift; sourceTree = "<group>"; };
 		CE068567284F601D00BE6441 /* AlsoLikeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlsoLikeCell.swift; sourceTree = "<group>"; };
 		CEDC6615283AAB83001D4E71 /* ZooMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZooMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEDC6618283AAB83001D4E71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +130,8 @@
 		9895629E2863117A0061FE55 /* ZooMarketKit */ = {
 			isa = PBXGroup;
 			children = (
+				9897BC1728639605001B4238 /* Services */,
+				9897BC14286395C0001B4238 /* Repositories */,
 				9895629F286311A70061FE55 /* Models */,
 			);
 			path = ZooMarketKit;
@@ -138,6 +144,22 @@
 				CEEB3D43283EA76B007FF5FE /* Items.json */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		9897BC14286395C0001B4238 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				9897BC15286395CE001B4238 /* HomeRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		9897BC1728639605001B4238 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9897BC1828639622001B4238 /* ItemsService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		CEDC660C283AAB83001D4E71 = {
@@ -299,9 +321,11 @@
 				989562912861BFE40061FE55 /* ItemDetailViewController.swift in Sources */,
 				CEDC6633283AB1C2001D4E71 /* HomeCoordinator.swift in Sources */,
 				CEEB3D56284B4745007FF5FE /* HeaderView.swift in Sources */,
+				9897BC1928639622001B4238 /* ItemsService.swift in Sources */,
 				9895628E2860DADB0061FE55 /* BaseCell.swift in Sources */,
 				CEDC662F283AAE14001D4E71 /* MainTabBarController.swift in Sources */,
 				CEEB3D47283EB205007FF5FE /* BundleLoading.swift in Sources */,
+				9897BC16286395CE001B4238 /* HomeRepository.swift in Sources */,
 				CEDC6631283AAE6A001D4E71 /* HomeViewController.swift in Sources */,
 				CEDC6638283AB59E001D4E71 /* Coordinator.swift in Sources */,
 				9895628C285DBCFF0061FE55 /* BaseCollectionViewController.swift in Sources */,
