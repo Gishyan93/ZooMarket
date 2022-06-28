@@ -7,14 +7,24 @@
 
 import UIKit
 
+/// Entry point of the application. Scenedelegate and AppDelegate
+/// are responsible for main flow of the application
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+    func scene(
+        _ scene: UIScene,
+        willConnectTo session: UISceneSession,
+        options connectionOptions: UIScene.ConnectionOptions
+    ) {
         guard let scene = (scene as? UIWindowScene) else { return }
         
+        /// Creating custom window so the application
+        /// could have one. If creating pages via storyboards window creates automatically
         let window = UIWindow(windowScene: scene)
+        
+        /// Creating custom tab bar controller which should create coordinators
         let tabBarController = MainTabBarController()
         window.rootViewController = tabBarController
         
@@ -49,7 +59,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
 }
 

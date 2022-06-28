@@ -12,6 +12,7 @@
 		989562912861BFE40061FE55 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989562902861BFE40061FE55 /* ItemDetailViewController.swift */; };
 		9897BC16286395CE001B4238 /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9897BC15286395CE001B4238 /* HomeRepository.swift */; };
 		9897BC1928639622001B4238 /* ItemsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9897BC1828639622001B4238 /* ItemsService.swift */; };
+		98BAF58B286AB2780086590D /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 98BAF58A286AB2780086590D /* Readme.md */; };
 		CE068568284F601D00BE6441 /* AlsoLikeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE068567284F601D00BE6441 /* AlsoLikeCell.swift */; };
 		CEDC6619283AAB83001D4E71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC6618283AAB83001D4E71 /* AppDelegate.swift */; };
 		CEDC661B283AAB83001D4E71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC661A283AAB83001D4E71 /* SceneDelegate.swift */; };
@@ -38,6 +39,7 @@
 		989562902861BFE40061FE55 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		9897BC15286395CE001B4238 /* HomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepository.swift; sourceTree = "<group>"; };
 		9897BC1828639622001B4238 /* ItemsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsService.swift; sourceTree = "<group>"; };
+		98BAF58A286AB2780086590D /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		CE068567284F601D00BE6441 /* AlsoLikeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlsoLikeCell.swift; sourceTree = "<group>"; };
 		CEDC6615283AAB83001D4E71 /* ZooMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZooMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEDC6618283AAB83001D4E71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		9895629B2863100B0061FE55 /* ZooMarket */ = {
 			isa = PBXGroup;
 			children = (
+				98BAF58A286AB2780086590D /* Readme.md */,
 				CEDC6623283AAB85001D4E71 /* LaunchScreen.storyboard */,
 				CEDC6621283AAB85001D4E71 /* Assets.xcassets */,
 			);
@@ -181,9 +184,9 @@
 		CEDC6617283AAB83001D4E71 /* ZooMarket */ = {
 			isa = PBXGroup;
 			children = (
-				CEDC6626283AAB85001D4E71 /* Info.plist */,
 				CEDC661A283AAB83001D4E71 /* SceneDelegate.swift */,
 				CEDC6618283AAB83001D4E71 /* AppDelegate.swift */,
+				CEDC6626283AAB85001D4E71 /* Info.plist */,
 				9895629B2863100B0061FE55 /* ZooMarket */,
 				9895629C2863104B0061FE55 /* ZooMarket_iOS */,
 				9895629D286310F00061FE55 /* ZooMarket_UIKit */,
@@ -298,6 +301,7 @@
 			files = (
 				CEDC6625283AAB85001D4E71 /* LaunchScreen.storyboard in Resources */,
 				CEDC6622283AAB85001D4E71 /* Assets.xcassets in Resources */,
+				98BAF58B286AB2780086590D /* Readme.md in Resources */,
 				CEEB3D44283EA76B007FF5FE /* Items.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

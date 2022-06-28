@@ -7,12 +7,14 @@
 
 import UIKit
 
+/// A UITabBarController's subclass which creates coordinators for each tab bar's item.
 class MainTabBarController: UITabBarController {
     let homeCoordinator = HomeCoordinator()
     let favouriteCoordinator = FavouriteCoordinator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         viewControllers = [
             homeCoordinator.navigationController,
             favouriteCoordinator.navigationController

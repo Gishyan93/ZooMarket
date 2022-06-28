@@ -38,17 +38,15 @@ class BrandCell: BaseCell {
         if isFavourite {
             UIView.transition(
                 with: likeButton,
-                duration: 2,
+                duration: 0.35,
                 options: .transitionCrossDissolve,
                 animations: {
                     self.likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
                 }, completion: nil)
-//            self.likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         } else {
-//            self.likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
             UIView.transition(
                 with: likeButton,
-                duration: 2,
+                duration: 0.35,
                 options: .transitionCrossDissolve,
                 animations: {
                     self.likeButton.setImage(UIImage(systemName: "heart"), for: .normal)

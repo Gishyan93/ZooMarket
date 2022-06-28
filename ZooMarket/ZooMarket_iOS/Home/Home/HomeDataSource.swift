@@ -31,7 +31,7 @@ protocol HomeDataSourceDelegate: AnyObject {
 class HomeDataSource: NSObject, UICollectionViewDataSource {
     weak var delegate: HomeDataSourceDelegate?
     
-    let homeRepository = HomeRepository()
+    let homeRepository = HomeRepository.shared
     
     var brands: [Brand] = []
     private(set) var sections: [HomeSection] = []

@@ -9,19 +9,12 @@ import Foundation
 
 class HomeRepository {
     let service = ItemsService()
+    static var shared = HomeRepository()
     
-    private(set) var _brands: [Brand] = []
-    var brands: [Brand] {
-        get {
-            _brands
-        }
-        set {
-            _brands = newValue
-        }
-    }
+    private(set) var brands: [Brand] = []
     
-    init() {
-        _brands = service.itemData.data.brands
+    private init() {
+        brands = service.itemData.data.brands
     }
     
     func getBrands() -> [Brand] {
