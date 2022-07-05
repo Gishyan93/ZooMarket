@@ -10,10 +10,11 @@ import UIKit
 class HomeViewController: BaseCollectionViewController {
     static let sectionHeaderElementKind = "section-header-element-kind"
     
-    var coordinator: HomeCoordinator?
-    var dataSource = HomeDataSource()
+    var coordinator: HomeCoordinator
+    var dataSource: HomeDataSource!
     
-    init() {
+    init(coordinator: HomeCoordinator) {
+        self.coordinator = coordinator
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
     
@@ -23,8 +24,6 @@ class HomeViewController: BaseCollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        assert(coordinator != nil, "You must set a coordinator before presenting this view controller.")
         
         collectionView.dataSource = dataSource
         collectionView.collectionViewLayout = makeLayout()
@@ -94,7 +93,7 @@ class HomeViewController: BaseCollectionViewController {
         // MARK: - Creating section
         let section = NSCollectionLayoutSection(group: group)
         section.boundarySupplementaryItems = [sectionHeader]
-        section.orthogonalScrollingBehavior = .groupPaging
+        section.orthogonalScrollingBehavior = .continuous
 
         return section
     }
@@ -142,7 +141,9 @@ class HomeViewController: BaseCollectionViewController {
         _ collectionView: UICollectionView,
         didSelectItemAt indexPath: IndexPath
     ) {
-        coordinator?.showItemDetailScene()
+        coordinator.showItemDetailScene(
+            with: dataSource.brands[indexPath.item]
+        )
     }
 }
 

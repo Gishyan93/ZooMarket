@@ -36,14 +36,17 @@ class BrandCell: BaseCell {
         let isFavourite = data.isFavourite ?? false
         
         if isFavourite {
+//            self.likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
             UIView.transition(
                 with: likeButton,
                 duration: 0.35,
                 options: .transitionCrossDissolve,
                 animations: {
+//                    self.likeButton.setima
                     self.likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
                 }, completion: nil)
         } else {
+//            self.likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
             UIView.transition(
                 with: likeButton,
                 duration: 0.35,
@@ -68,7 +71,7 @@ extension BrandCell {
     }
     
     private func initLikeButton() {
-        likeButton = UIButton(type: .system)
+        likeButton = UIButton()
         likeButton.setImage(
             UIImage(systemName: "heart"),
             for: .normal

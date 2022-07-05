@@ -31,15 +31,17 @@ protocol HomeDataSourceDelegate: AnyObject {
 class HomeDataSource: NSObject, UICollectionViewDataSource {
     weak var delegate: HomeDataSourceDelegate?
     
-    let homeRepository = HomeRepository.shared
+    var homeRepository: ItemsRepository
     
     var brands: [Brand] = []
     private(set) var sections: [HomeSection] = []
     
-    override init() {
+    init(homeRepository: ItemsRepository) {
+        self.homeRepository = homeRepository
         super.init()
-
+        
         updateSections()
+        homeRepository.delegate = self
     }
     
     func updateSections() {
@@ -142,8 +144,15 @@ extension HomeDataSource: BrandCellDelegate {
     func likeButtonPressed(with brand: Brand) {
         
         homeRepository.set(brand: brand)
-        brands = homeRepository.getBrands()
+//        brands = homeRepository.getBrands()
         
+//        delegate?.updateInfo()
+    }
+}
+
+extension HomeDataSource: ItemsRepositoryDelegate {
+    func update(brands: [Brand]) {
+        self.brands = brands
         delegate?.updateInfo()
     }
 }

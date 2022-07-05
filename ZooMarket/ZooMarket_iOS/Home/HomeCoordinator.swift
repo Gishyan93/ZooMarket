@@ -21,18 +21,17 @@ class HomeCoordinator: Coordinator {
         navigationController.coordinator = self
 
         // Creating home View controller
-        let viewController = HomeViewController()
+        let viewController = HomeFactory.createHomeViewController(coordinator: self)
         viewController.tabBarItem = UITabBarItem(
             title: "Home", image: UIImage(systemName: "house"), tag: 0
         )
-        viewController.coordinator = self
         
         //
         navigationController.viewControllers = [viewController]
     }
     
-    func showItemDetailScene() {
-        let viewController = ItemDetailViewController()
+    func showItemDetailScene(with brand: Brand) {
+        let viewController = ItemDetailFactory.createItemDetailViewController(brand: brand)
         navigationController.pushViewController(
             viewController, animated: true
         )

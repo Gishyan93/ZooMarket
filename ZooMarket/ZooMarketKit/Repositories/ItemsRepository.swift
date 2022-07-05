@@ -7,9 +7,14 @@
 
 import Foundation
 
-class HomeRepository {
+protocol ItemsRepositoryDelegate: AnyObject {
+    func update(brands: [Brand])
+}
+
+class ItemsRepository {
+    weak var delegate: ItemsRepositoryDelegate?
     let service = ItemsService()
-    static var shared = HomeRepository()
+    static var shared = ItemsRepository()
     
     private(set) var brands: [Brand] = []
     
@@ -28,5 +33,7 @@ class HomeRepository {
                 brands[index].isFavourite = !isFav
             }
         }
+        
+        delegate?.update(brands: brands)
     }
 }
