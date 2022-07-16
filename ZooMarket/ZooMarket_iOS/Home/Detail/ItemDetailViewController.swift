@@ -91,7 +91,6 @@ extension ItemDetailViewController {
         stackView = UIStackView()
         stackView.axis = .vertical
         stackView.spacing = 15
-        stackView.alignment = .center
         stackView.translatesAutoresizingMaskIntoConstraints = false
     }
     

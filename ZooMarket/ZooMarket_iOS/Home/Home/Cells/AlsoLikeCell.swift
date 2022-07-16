@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AlsoLikeCell: BaseCell {
+class AlsoLikeCell: BaseCollectionCell {
     private var nameLabel: UILabel!
     
     override func initViews() {
@@ -19,5 +19,8 @@ class AlsoLikeCell: BaseCell {
     
     func set(data: String) {
         nameLabel.text = data
+        
+        layer.cornerRadius = 12
+        layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner]
     }
 }

@@ -31,21 +31,23 @@ protocol HomeDataSourceDelegate: AnyObject {
 class HomeDataSource: NSObject, UICollectionViewDataSource {
     weak var delegate: HomeDataSourceDelegate?
     
-    var homeRepository: ItemsRepository
+    var itemsRepository: ItemsRepository
     
     var brands: [Brand] = []
     private(set) var sections: [HomeSection] = []
     
-    init(homeRepository: ItemsRepository) {
-        self.homeRepository = homeRepository
+    init(itemsRepository: ItemsRepository) {
+        self.itemsRepository = itemsRepository
         super.init()
         
         updateSections()
-        homeRepository.delegate = self
+        // Delegate of itemsRepository is HomeDataSource
+//        itemsRepository.delegate = self
+        itemsRepository.multicastDelegate.add(delegate: self)
     }
     
     func updateSections() {
-        brands = homeRepository.getBrands()
+        brands = itemsRepository.getBrands()
         let brandItems = brands.map {
             HomeItem(id: $0.id, name: $0.name, image: $0.image)
         }
@@ -99,7 +101,7 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: "BrandCell", for: indexPath
             ) as? BrandCell
-        else { fatalError("Failed to dequeue a StatusCollectionViewCell.") }
+        else { fatalError("Failed to dequeue a BrandCell.") }
 
         
         cell.delegate = self
@@ -143,7 +145,7 @@ class HomeDataSource: NSObject, UICollectionViewDataSource {
 extension HomeDataSource: BrandCellDelegate {
     func likeButtonPressed(with brand: Brand) {
         
-        homeRepository.set(brand: brand)
+        itemsRepository.set(brand: brand)
 //        brands = homeRepository.getBrands()
         
 //        delegate?.updateInfo()

@@ -10,7 +10,7 @@ import UIKit
 /// A UITabBarController's subclass which creates coordinators for each tab bar's item.
 class MainTabBarController: UITabBarController {
     let homeCoordinator = HomeCoordinator()
-    let favouriteCoordinator = FavouriteCoordinator()
+    let favouriteCoordinator = FavouritesCoordinator()
     
     override func viewDidLoad() {
         super.viewDidLoad()

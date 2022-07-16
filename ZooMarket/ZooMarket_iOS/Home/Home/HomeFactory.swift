@@ -13,7 +13,7 @@ class HomeFactory {
         repository: ItemsRepository = .shared
     ) -> HomeViewController {
         
-        let dataSource = HomeDataSource(homeRepository: repository)
+        let dataSource = HomeDataSource(itemsRepository: repository)
         let viewController = HomeViewController(coordinator: coordinator)
         viewController.dataSource = dataSource
         return viewController

@@ -12,11 +12,15 @@ protocol ItemsRepositoryDelegate: AnyObject {
 }
 
 class ItemsRepository {
-    weak var delegate: ItemsRepositoryDelegate?
+    var multicastDelegate = MulticastDelegate<ItemsRepositoryDelegate>()
+    
     let service = ItemsService()
     static var shared = ItemsRepository()
     
     private(set) var brands: [Brand] = []
+    var favouritesItems: [Brand] {
+        brands.filter({ $0.isFavourite == true })
+    }
     
     private init() {
         brands = service.itemData.data.brands
@@ -34,6 +38,8 @@ class ItemsRepository {
             }
         }
         
-        delegate?.update(brands: brands)
+        multicastDelegate.invokeForEachDelegate { delegate in
+            delegate.update(brands: brands)
+        }
     }
 }

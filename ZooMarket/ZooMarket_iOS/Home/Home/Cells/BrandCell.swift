@@ -11,7 +11,7 @@ protocol BrandCellDelegate: AnyObject {
     func likeButtonPressed(with brand: Brand)
 }
 
-class BrandCell: BaseCell {
+class BrandCell: BaseCollectionCell {
     weak var delegate: BrandCellDelegate?
     var nameLabel: UILabel!
     var likeButton: UIButton!
